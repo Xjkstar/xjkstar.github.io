@@ -4,23 +4,8 @@
 
     
   <url>
-    <loc>https://xjkstar.github.io/xjkstar.blog.io/2018/05/22/hello-world/</loc>
-    <lastmod>2018-05-24T06:43:21.601Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-05-22T11:24:48.515Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://xjkstar.github.io/xjkstar.blog.io/2018/05/22/HEXO-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2018-05-24T06:40:42.464Z</lastmod>
+    <lastmod>2018-05-24T07:03:25.692Z</lastmod>
     <data>
         <display>
         <title>HEXO 常用指令</title>
@@ -32,6 +17,27 @@
          
          
            
+             
+              <breadCrumb title="工具" url="https://xjkstar.github.io/xjkstar.blog.io/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xjkstar.github.io/xjkstar.blog.io/2018/05/22/hello-world/</loc>
+    <lastmod>2018-05-24T07:03:18.725Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-05-22T11:24:48.515Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="工具" url="https://xjkstar.github.io/xjkstar.blog.io/categories/%E5%B7%A5%E5%85%B7/"/>
+          
         </display>
     </data>
     </url>
@@ -39,7 +45,7 @@
     
   <url>
     <loc>https://xjkstar.github.io/xjkstar.blog.io/2018/05/24/GitHub-GitLab-ssh%E5%B9%B6%E5%AD%98/</loc>
-    <lastmod>2018-05-24T06:39:31.899Z</lastmod>
+    <lastmod>2018-05-24T07:02:35.638Z</lastmod>
     <data>
         <display>
         <title>GitHub & GitLab ssh并存</title>
@@ -53,6 +59,9 @@
          
          
            
+             
+              <breadCrumb title="工具" url="https://xjkstar.github.io/xjkstar.blog.io/categories/%E5%B7%A5%E5%85%B7/"/>
+          
         </display>
     </data>
     </url>
