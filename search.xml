@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title>GitHub &amp; GitLab ssh并存</title>
+      <link href="/xjkstar.blog.io/2018/05/24/GitHub-GitLab-ssh%E5%B9%B6%E5%AD%98/"/>
+      <url>/xjkstar.blog.io/2018/05/24/GitHub-GitLab-ssh%E5%B9%B6%E5%AD%98/</url>
+      <content type="html"><![CDATA[<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>一台PC上同时使用GitHub、GitLab提交代码，遇到SSH冲突问题。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>分别生成各自SSH，并通过config配置使用场景。</p><h3 id="1-生成SSH"><a href="#1-生成SSH" class="headerlink" title="1. 生成SSH"></a>1. 生成SSH</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> github<span class="string">'s ssh</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -f ~/.ssh/id_rsa_github -C <span class="string">"yourGitHubEmail@example.com"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> gitlab<span class="string">'s ssh</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -f ~/.ssh/id_rsa_gitlab -C <span class="string">"yourGitLab@example.com"</span></span></span><br></pre></td></tr></table></figure><h3 id="2-添加private-key"><a href="#2-添加private-key" class="headerlink" title="2. 添加private key"></a>2. 添加private key</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-<span class="keyword">add</span><span class="bash"> ~/.ssh/id_rsa_github</span></span><br><span class="line"><span class="bash">$ ssh-add ~/.ssh/id_rsa_gitlab</span></span><br></pre></td></tr></table></figure><h3 id="3-上传public-key"><a href="#3-上传public-key" class="headerlink" title="3. 上传public key"></a>3. 上传public key</h3><p>在github、gitlab中分别输入对应的~/.ssh/id_isa_gitXXX.pub内容</p><h3 id="4-修改配置"><a href="#4-修改配置" class="headerlink" title="4. 修改配置"></a>4. 修改配置</h3><p>打开config</p><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">open</span> ~/.ssh/<span class="built_in">config</span></span><br></pre></td></tr></table></figure><p>增加以下内容</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#gitlab</span><br><span class="line">Host gitlab</span><br><span class="line">        HostName gitlab.*.com</span><br><span class="line">        IdentityFile ~/.ssh/id_rsa_gitlab</span><br><span class="line"></span><br><span class="line">#github</span><br><span class="line">Host github</span><br><span class="line">        HostName github.com</span><br><span class="line">        IdentityFile ~/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure><h3 id="5-验证"><a href="#5-验证" class="headerlink" title="5. 验证"></a>5. 验证</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 测试github</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ssh -T yourGitHubEmail@example.com</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash"> 测试gitlab</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ssh -T yourGitLab@example.com</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+        <tags>
+            
+            <tag> ssh </tag>
+            
+            <tag> giehub </tag>
+            
+            <tag> gitlab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>HEXO 常用命令</title>
       <link href="/xjkstar.blog.io/2018/05/22/HEXO-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
       <url>/xjkstar.blog.io/2018/05/22/HEXO-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
