@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Objective-c,github"><title>解决Xcode的Instruments无法找到DSYM文件问题 | Xjkstar</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">解决Xcode的Instruments无法找到DSYM文件问题</h1><a id="logo" href="/.">Xjkstar</a><p class="description">This is your life. Do what you love, and do it often.</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">解决Xcode的Instruments无法找到DSYM文件问题</h1><div class="post-meta">May 24, 2018<span> | </span><span class="category"><a href="/categories/开发工具/">开发工具</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 445</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-hourglass-half"></i><span class="post-count"> 2</span><span class="post-meta-item-text"> 分钟</span></span></span></div><a class="disqus-comment-count" data-disqus-identifier="2018/05/24/解决Xcode的Instruments无法找到DSYM文件问题/" href="/2018/05/24/解决Xcode的Instruments无法找到DSYM文件问题/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DSYM"><span class="toc-number">2.</span> <span class="toc-text">DSYM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决"><span class="toc-number">3.</span> <span class="toc-text">解决</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcode部分"><span class="toc-number">3.1.</span> <span class="toc-text">Xcode部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Instruments部分"><span class="toc-number">3.2.</span> <span class="toc-text">Instruments部分</span></a></li></ol></li></ol></div></div><div class="post-content"><p>都知道Instruments是神器，但要用的时候发现，跟别人看到的数据不一样。<br>别人看到的是各种类名、方法名<br>自己看到的只有十六进制地址<br>Instruments找不到调试符号表DSYM？一脸懵逼！<br><a id="more"></a></p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>都知道Instruments是神器，但要用的时候发现，跟别人看到的数据不一样。<br>别人看到的是各种类名、方法名<br>自己看到的只有十六进制地址<br>Instruments找不到调试符号表DSYM？一脸懵逼！<br><img src="01.png" alt="_2016_10_20_4_27_48"></p>
+<h1 id="DSYM"><a href="#DSYM" class="headerlink" title="DSYM"></a>DSYM</h1><p>什么是DWARF，他与熟悉的dSYM文件什么关系？查了一下。 </p>
+<p>DWARF与dSYM的关系是，DWARF是文件格式，而dSYM往往指一个单独的文件。在Xcode中如果不做特殊制定，debug information是被保存在executable文件中，可以使用dsymutil从executable中提取dSYM文件。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>问题是找不到DSYM文件，所以解决步骤分2步：</p>
+<ol>
+<li>人肉找</li>
+<li>找到后，告诉Instruments</li>
+</ol>
+<h2 id="Xcode部分"><a href="#Xcode部分" class="headerlink" title="Xcode部分"></a>Xcode部分</h2><ol>
+<li>定位到build settings-build option-Debug Information Format，设为<code>DWARF with dSYM File</code><br><img src="02.png" alt="_"></li>
+<li>清理工程Clean Product (快捷键Shift + Command + K)</li>
+<li>创建工程Build Product (快捷键Command + B)</li>
+<li>在编译日志中找到刚刚生产的dsym文件路径，推荐在右上角输入关键字<code>dsym</code>过滤信息<br><img src="03.png" alt="_"><br>点开后看到路径<br><img src="04.png" alt="_"><br>一般路径格式：<code>/Users/YourUserName/Library/Developer/Xcode/DerivedData/YourProjectName/Build/Products/&lt;mode&gt;-iOS/YourProjectName.app.dSYM</code></li>
+</ol>
+<h2 id="Instruments部分"><a href="#Instruments部分" class="headerlink" title="Instruments部分"></a>Instruments部分</h2><ol>
+<li>偏好设置中，设置DSYM文件所在文件夹，可以设置多个，比如Debug、Release2个路径<br><img src="05.png" alt="_"></li>
+<li>好了，试一试。如果还没有符号信息，没关系，继续手机操作，然后终止</li>
+<li>打开Instruments-File-Symbols，展开你的工程，选中后设置下<code>dSYM Path</code>。再回头看刚才的记录数据，都有符号信息了。</li>
+</ol>
+<p><img src="06.png" alt="_"></p>
+</div><iframe src="/donate/?AliPayQR=/img/AliPayQR.png&amp;WeChatQR=null&amp;GitHub=null&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a class="article-share-link" data-url="https://xjkstar.github.io/2018/05/24/解决Xcode的Instruments无法找到DSYM文件问题/" data-id="cjhkgv6x70006bdsd2oumk5yo" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADK0lEQVR42u3aS27jQAwFwNz/0hpgVgM4Iz2STiDR1SvDVtxd7QXDz9dXvI6/69/Xr+v1yfyd10/zZ86fHC1sbGzsh7CP03V+lORvk+vr/QD5T/LNLtjY2Njr2MkRqwEsD0X/e37y+sKIjY2N/ZHsJLAlweMIVjW4YmNjY2NP0oaE1ysPYWNjY2Pn7N5XVwtPecoxuYI319KwsbGxb8/uNXrv+frH+9vY2NjYN2MfrZWnEOet2Uk7eXR+bGxs7EXsvA2QbD8fA8p37zUtyt0PbGxs7IewJ/+rV7+hOkyZNyGSC8LGxsbex06CULXMVH1n0rJttqKxsbGx17EnAzFJOSkvPPWe+dVhHWxsbOybsfO0oZp49NKb5Pt7ZazCb46NjY39QPb8CpJK1aRJkAfXMhgbGxt7ETu/m0lZ510pTd4MLiQk2NjY2A9kzwNP9eKqnefqWE90HmxsbOxF7Cp+Ek6S9KNXQuqNCmFjY2N/DrvXAK42DyZBrpr2YGNjY29i5xvMg1AvzFTBhVvBxsbGXsHOS/O9dkI+UplQk8Qm+XmwsbGxN7HzsJEDJiWqScQpJD/Y2NjY69iTEcbeIM58fKfXqMbGxsbeyp4nJNVmcJLAJKEonzDFxsbG3s2ej1T2OszVq6mG0ovONjY2NvY6dl4wylOU3jPVkcrq0Cc2Njb2Pvb8EFVMfh29QHXhwsbGxl7ETpqpSdLSa9zmR8zHcfJyFTY2NvYOdh5mks3eFQJ7Dd1CkMPGxsZex66GqHzLJGHopSi9Ehg2Njb2bvakcJOzqy2HeQnpm3NiY2NjL2JPxnd6Zaak6FMtLZ2fNqqiYWNjYz+WXS0PTdKS+SBOdZeLVAQbGxt7Bbu6JiGkV7qaFLnKaQk2Njb2A9lHceXF/V65KoH1ilbRfWBjY2M/kN0bgqmmJZNyUj5ClAdRbGxs7H3s3pbVYFNt4ub5U7MEho2Njb2OnR86P24e6ibtgWYtDRsbG/uD2b3g8a5PJxeNjY2Njf2uZCN/ZoK/SGOwsbGx17F/rjTfe75axsrPj42Njb2PPWn0Jg3dpKzfw+dJS7NEhY2NjX139h/zKt5yQfYssgAAAABJRU5ErkJggg==">分享</a><div class="tags"><a href="/tags/Xcode/">Xcode</a><a href="/tags/Instruments/">Instruments</a><a href="/tags/DSYM/">DSYM</a></div><div class="post-nav"><a class="next" href="/2018/05/24/GitHub-GitLab-ssh并存/">GitHub &amp; GitLab ssh并存</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'https://xjkstar.github.io/2018/05/24/解决Xcode的Instruments无法找到DSYM文件问题/';
+    this.page.identifier = '2018/05/24/解决Xcode的Instruments无法找到DSYM文件问题/';
+    this.page.title = '解决Xcode的Instruments无法找到DSYM文件问题';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//xjkstar.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//xjkstar.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://xjkstar.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://xjkstar.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/gitlab/" style="font-size: 15px;">gitlab</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/效率工具/" style="font-size: 15px;">效率工具</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/Instruments/" style="font-size: 15px;">Instruments</a> <a href="/tags/DSYM/" style="font-size: 15px;">DSYM</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/解决Xcode的Instruments无法找到DSYM文件问题/">解决Xcode的Instruments无法找到DSYM文件问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/GitHub-GitLab-ssh并存/">GitHub & GitLab ssh并存</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/HEXO-常用命令/">HEXO 常用指令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//xjkstar.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Xjkstar.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
