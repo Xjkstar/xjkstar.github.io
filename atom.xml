@@ -5,9 +5,9 @@
   <subtitle>This is your life. Do what you love, and do it often.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://xjkstar.github.io/"/>
+  <link href="https://xjkstar.github.io/xjkstar.blog.io/"/>
   <updated>2018-05-24T11:50:02.324Z</updated>
-  <id>https://xjkstar.github.io/</id>
+  <id>https://xjkstar.github.io/xjkstar.blog.io/</id>
   
   <author>
     <name>Thomas Hong</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Xcode非开发者账号真机调试教程</title>
-    <link href="https://xjkstar.github.io/2018/05/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/"/>
-    <id>https://xjkstar.github.io/2018/05/24/Xcode非开发者账号真机调试教程/</id>
+    <link href="https://xjkstar.github.io/xjkstar.blog.io/2018/05/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/"/>
+    <id>https://xjkstar.github.io/xjkstar.blog.io/2018/05/24/Xcode非开发者账号真机调试教程/</id>
     <published>2018-05-24T11:45:01.000Z</published>
     <updated>2018-05-24T11:50:02.324Z</updated>
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="Xcode" scheme="https://xjkstar.github.io/categories/Xcode/"/>
+      <category term="Xcode" scheme="https://xjkstar.github.io/xjkstar.blog.io/categories/Xcode/"/>
     
     
-      <category term="Xcode" scheme="https://xjkstar.github.io/tags/Xcode/"/>
+      <category term="Xcode" scheme="https://xjkstar.github.io/xjkstar.blog.io/tags/Xcode/"/>
     
-      <category term="Push" scheme="https://xjkstar.github.io/tags/Push/"/>
+      <category term="Push" scheme="https://xjkstar.github.io/xjkstar.blog.io/tags/Push/"/>
     
   </entry>
   
   <entry>
     <title>解决Xcode的Instruments无法找到DSYM文件问题</title>
-    <link href="https://xjkstar.github.io/2018/05/24/%E8%A7%A3%E5%86%B3Xcode%E7%9A%84Instruments%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0DSYM%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98/"/>
-    <id>https://xjkstar.github.io/2018/05/24/解决Xcode的Instruments无法找到DSYM文件问题/</id>
+    <link href="https://xjkstar.github.io/xjkstar.blog.io/2018/05/24/%E8%A7%A3%E5%86%B3Xcode%E7%9A%84Instruments%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0DSYM%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98/"/>
+    <id>https://xjkstar.github.io/xjkstar.blog.io/2018/05/24/解决Xcode的Instruments无法找到DSYM文件问题/</id>
     <published>2018-05-24T09:38:44.000Z</published>
     <updated>2018-05-24T12:06:19.756Z</updated>
     
@@ -55,21 +55,21 @@
     
     </summary>
     
-      <category term="Xcode" scheme="https://xjkstar.github.io/categories/Xcode/"/>
+      <category term="Xcode" scheme="https://xjkstar.github.io/xjkstar.blog.io/categories/Xcode/"/>
     
     
-      <category term="Xcode" scheme="https://xjkstar.github.io/tags/Xcode/"/>
+      <category term="Xcode" scheme="https://xjkstar.github.io/xjkstar.blog.io/tags/Xcode/"/>
     
-      <category term="Instruments" scheme="https://xjkstar.github.io/tags/Instruments/"/>
+      <category term="Instruments" scheme="https://xjkstar.github.io/xjkstar.blog.io/tags/Instruments/"/>
     
-      <category term="DSYM" scheme="https://xjkstar.github.io/tags/DSYM/"/>
+      <category term="DSYM" scheme="https://xjkstar.github.io/xjkstar.blog.io/tags/DSYM/"/>
     
   </entry>
   
   <entry>
     <title>GitHub &amp; GitLab ssh并存</title>
-    <link href="https://xjkstar.github.io/2018/05/24/GitHub-GitLab-ssh%E5%B9%B6%E5%AD%98/"/>
-    <id>https://xjkstar.github.io/2018/05/24/GitHub-GitLab-ssh并存/</id>
+    <link href="https://xjkstar.github.io/xjkstar.blog.io/2018/05/24/GitHub-GitLab-ssh%E5%B9%B6%E5%AD%98/"/>
+    <id>https://xjkstar.github.io/xjkstar.blog.io/2018/05/24/GitHub-GitLab-ssh并存/</id>
     <published>2018-05-24T06:09:10.000Z</published>
     <updated>2018-05-24T08:12:09.939Z</updated>
     
@@ -81,21 +81,21 @@
     
     </summary>
     
-      <category term="工具" scheme="https://xjkstar.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://xjkstar.github.io/xjkstar.blog.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="ssh" scheme="https://xjkstar.github.io/tags/ssh/"/>
+      <category term="ssh" scheme="https://xjkstar.github.io/xjkstar.blog.io/tags/ssh/"/>
     
-      <category term="github" scheme="https://xjkstar.github.io/tags/github/"/>
+      <category term="github" scheme="https://xjkstar.github.io/xjkstar.blog.io/tags/github/"/>
     
-      <category term="gitlab" scheme="https://xjkstar.github.io/tags/gitlab/"/>
+      <category term="gitlab" scheme="https://xjkstar.github.io/xjkstar.blog.io/tags/gitlab/"/>
     
   </entry>
   
   <entry>
     <title>HEXO 常用指令</title>
-    <link href="https://xjkstar.github.io/2018/05/22/HEXO-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>https://xjkstar.github.io/2018/05/22/HEXO-常用命令/</id>
+    <link href="https://xjkstar.github.io/xjkstar.blog.io/2018/05/22/HEXO-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://xjkstar.github.io/xjkstar.blog.io/2018/05/22/HEXO-常用命令/</id>
     <published>2018-05-22T11:52:51.000Z</published>
     <updated>2018-05-24T09:55:44.897Z</updated>
     
@@ -107,19 +107,19 @@
     
     </summary>
     
-      <category term="工具" scheme="https://xjkstar.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://xjkstar.github.io/xjkstar.blog.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Hexo" scheme="https://xjkstar.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://xjkstar.github.io/xjkstar.blog.io/tags/Hexo/"/>
     
-      <category term="效率工具" scheme="https://xjkstar.github.io/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
+      <category term="效率工具" scheme="https://xjkstar.github.io/xjkstar.blog.io/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://xjkstar.github.io/2018/05/22/hello-world/"/>
-    <id>https://xjkstar.github.io/2018/05/22/hello-world/</id>
+    <link href="https://xjkstar.github.io/xjkstar.blog.io/2018/05/22/hello-world/"/>
+    <id>https://xjkstar.github.io/xjkstar.blog.io/2018/05/22/hello-world/</id>
     <published>2018-05-22T11:24:48.515Z</published>
     <updated>2018-05-24T07:03:18.725Z</updated>
     
@@ -131,7 +131,7 @@
     
     </summary>
     
-      <category term="工具" scheme="https://xjkstar.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://xjkstar.github.io/xjkstar.blog.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
   </entry>
