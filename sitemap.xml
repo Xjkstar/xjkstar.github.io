@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xjkstar.github.io/2018/05/22/hello-world/</loc>
+    
+    <lastmod>2018-05-24T06:43:21.601Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xjkstar.github.io/2018/05/22/HEXO-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2018-05-24T06:40:42.464Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xjkstar.github.io/2018/05/24/GitHub-GitLab-ssh%E5%B9%B6%E5%AD%98/</loc>
     
-    <lastmod>2018-05-24T06:24:42.500Z</lastmod>
+    <lastmod>2018-05-24T06:39:31.899Z</lastmod>
     
   </url>
   
@@ -12,20 +26,6 @@
     <loc>https://xjkstar.github.io/about/index.html</loc>
     
     <lastmod>2018-05-24T02:52:46.263Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xjkstar.github.io/2018/05/22/HEXO-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2018-05-23T12:36:23.310Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xjkstar.github.io/2018/05/22/hello-world/</loc>
-    
-    <lastmod>2018-05-22T11:24:48.515Z</lastmod>
     
   </url>
   

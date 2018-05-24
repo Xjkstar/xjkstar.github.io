@@ -4,19 +4,13 @@
 
     
   <url>
-    <loc>https://xjkstar.github.io/xjkstar.blog.io/2018/05/24/GitHub-GitLab-ssh%E5%B9%B6%E5%AD%98/</loc>
-    <lastmod>2018-05-24T06:24:42.500Z</lastmod>
+    <loc>https://xjkstar.github.io/2018/05/22/hello-world/</loc>
+    <lastmod>2018-05-24T06:43:21.601Z</lastmod>
     <data>
         <display>
-        <title>GitHub & GitLab ssh并存</title>
-        <pubTime>2018-05-24T06:09:10.000Z</pubTime>
+        <title>Hello World</title>
+        <pubTime>2018-05-22T11:24:48.515Z</pubTime>
         
-        <tag>ssh</tag>
-         
-        <tag>giehub</tag>
-         
-        <tag>gitlab</tag>
-         
          
            
         </display>
@@ -24,13 +18,12 @@
     </url>
 
     
-    
   <url>
-    <loc>https://xjkstar.github.io/xjkstar.blog.io/2018/05/22/HEXO-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2018-05-23T12:36:23.310Z</lastmod>
+    <loc>https://xjkstar.github.io/2018/05/22/HEXO-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-05-24T06:40:42.464Z</lastmod>
     <data>
         <display>
-        <title>HEXO 常用命令</title>
+        <title>HEXO 常用指令</title>
         <pubTime>2018-05-22T11:52:51.000Z</pubTime>
         
         <tag>Hexo</tag>
@@ -45,17 +38,24 @@
 
     
   <url>
-    <loc>https://xjkstar.github.io/xjkstar.blog.io/2018/05/22/hello-world/</loc>
-    <lastmod>2018-05-22T11:24:48.515Z</lastmod>
+    <loc>https://xjkstar.github.io/2018/05/24/GitHub-GitLab-ssh%E5%B9%B6%E5%AD%98/</loc>
+    <lastmod>2018-05-24T06:39:31.899Z</lastmod>
     <data>
         <display>
-        <title>Hello World</title>
-        <pubTime>2018-05-22T11:24:48.515Z</pubTime>
+        <title>GitHub & GitLab ssh并存</title>
+        <pubTime>2018-05-24T06:09:10.000Z</pubTime>
         
+        <tag>ssh</tag>
+         
+        <tag>github</tag>
+         
+        <tag>gitlab</tag>
+         
          
            
         </display>
     </data>
     </url>
 
+    
 </urlset>
