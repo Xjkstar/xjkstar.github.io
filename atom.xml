@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xjkstar.github.io/"/>
-  <updated>2018-05-24T11:43:55.613Z</updated>
+  <updated>2018-05-24T11:50:02.324Z</updated>
   <id>https://xjkstar.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Xcode非开发者账号真机调试教程</title>
+    <link href="https://xjkstar.github.io/2018/05/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/"/>
+    <id>https://xjkstar.github.io/2018/05/24/Xcode非开发者账号真机调试教程/</id>
+    <published>2018-05-24T11:45:01.000Z</published>
+    <updated>2018-05-24T11:50:02.324Z</updated>
+    
+    <content type="html"><![CDATA[<p>对于Xcode7或更高版本，Xcode支持非开发者账号真机调试教程<br><a id="more"></a><br>RT。正文开始。</p><h3 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h3><p>首先得有Apple ID、Xcode7或更高版本</p><h3 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h3><p>打开Xcode个人偏好，添加Apple ID<br><img src="01.jpeg" alt="EC00CCD2_DF55_4167_8D4E_658AFA344200_"></p><h3 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h3><p>选中添加的账号，打开View Details<br><img src="02.jpeg" alt="94D1D254_D1D4_4AD7_910E_CC0AF78255D4"></p><h3 id="4、"><a href="#4、" class="headerlink" title="4、"></a>4、</h3><p>创建调试签名，对iOS Development点击Create，至此Xcode配置完成<br><img src="03.jpeg" alt="8C4BCF36_9350_4F00_B51C_FBDE2A92DCA3"></p><h3 id="5、"><a href="#5、" class="headerlink" title="5、"></a>5、</h3><p>连接iPhone设备，打开一个工程</p><h3 id="6、"><a href="#6、" class="headerlink" title="6、"></a>6、</h3><p>查看Build Settings，<br>确保code signing Entitlements为空，<br>Code signing Identity选择iOS Developer，<br>Provisioning Profile选择Automatic<br><img src="04.jpeg" alt="1B024716_B12F_49A1_B782_E63E274D7E22"></p><h3 id="7、"><a href="#7、" class="headerlink" title="7、"></a>7、</h3><p>调试设备选择插入的iPhone，<br>查看General，<br>修改下Bundle Identifier的内容，例如加个后缀，确保改值未被其他账户使用过，<br>Team选择刚添加的账号，<br>然后开始Fix issue（如果没有黄色警告，可以直接run）<br><img src="05.jpeg" alt="866B3C13_2553_4CA5_A8F5_F70B503E59A4"></p><h3 id="8、"><a href="#8、" class="headerlink" title="8、"></a>8、</h3><p>fix的过程比较久，如果超时了，重试fix。<br>成功后，黄色警告消失。此时可以run了<br><img src="06.jpeg" alt="67E1FD70_A2D2_402A_B4D1_451C090527F5"></p><h3 id="9、"><a href="#9、" class="headerlink" title="9、"></a>9、</h3><p>iOS9 或更高版本，第一次run可能会报错，<br>此时可以看到iPhone里已有demo，证书信任下<br><img src="07.jpeg" alt="FEFA012F_95C6_4455_BB34_A99E20129A70"><br><img src="08.jpeg" alt="Evernote_Camera_Roll_20151209_200232"></p><h3 id="10、"><a href="#10、" class="headerlink" title="10、"></a>10、</h3><p>Congratulations!Final Complete！Mission All~Over!</p><h3 id="11、"><a href="#11、" class="headerlink" title="11、"></a>11、</h3><p>针对xcode 8.2级以上版本，有时遇到如下报错<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The <span class="string">'Apple Push Notification'</span> feature <span class="keyword">is</span> <span class="keyword">only</span> available <span class="keyword">to</span> users enrolled in Apple Developer Program. Please visit http<span class="variable">s:</span>//developer.apple.<span class="keyword">com</span>/programs/ <span class="keyword">to</span> enroll.</span><br></pre></td></tr></table></figure></p><p>老版本可以在Capabilities直接关掉Push，8.2开始，界面上没有这个开关了，但配置还在。此时需要手工编辑xproject。<br>打开工程目录下：/Pods/Portal/Portal/Portal.xcodeproj，右键“显示包内容”，打开project.pbxproj，搜索关键词“com.apple.Push”，看见如下内容：<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">com.apple.Push = &#123;</span><br><span class="line">    enabled = <span class="number">1</span><span class="comment">;</span></span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure></p><p>修改enabled = 0，保存，退出，run～</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对于Xcode7或更高版本，Xcode支持非开发者账号真机调试教程&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Xcode" scheme="https://xjkstar.github.io/categories/Xcode/"/>
+    
+    
+      <category term="Xcode" scheme="https://xjkstar.github.io/tags/Xcode/"/>
+    
+      <category term="Push" scheme="https://xjkstar.github.io/tags/Push/"/>
+    
+  </entry>
+  
+  <entry>
     <title>解决Xcode的Instruments无法找到DSYM文件问题</title>
     <link href="https://xjkstar.github.io/2018/05/24/%E8%A7%A3%E5%86%B3Xcode%E7%9A%84Instruments%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0DSYM%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98/"/>
     <id>https://xjkstar.github.io/2018/05/24/解决Xcode的Instruments无法找到DSYM文件问题/</id>
     <published>2018-05-24T09:38:44.000Z</published>
-    <updated>2018-05-24T11:43:55.613Z</updated>
+    <updated>2018-05-24T12:06:19.756Z</updated>
     
     <content type="html"><![CDATA[<p>都知道Instruments是神器，但要用的时候发现，跟别人看到的数据不一样。<br>别人看到的是各种类名、方法名<br>自己看到的只有十六进制地址<br>Instruments找不到调试符号表DSYM？一脸懵逼！<br><a id="more"></a></p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>都知道Instruments是神器，但要用的时候发现，跟别人看到的数据不一样。<br>别人看到的是各种类名、方法名<br>自己看到的只有十六进制地址<br>Instruments找不到调试符号表DSYM？一脸懵逼！<br><img src="01.png" alt="_2016_10_20_4_27_48"></p><h1 id="DSYM"><a href="#DSYM" class="headerlink" title="DSYM"></a>DSYM</h1><p>什么是DWARF，他与熟悉的dSYM文件什么关系？查了一下。 </p><p>DWARF与dSYM的关系是，DWARF是文件格式，而dSYM往往指一个单独的文件。在Xcode中如果不做特殊制定，debug information是被保存在executable文件中，可以使用dsymutil从executable中提取dSYM文件。</p><h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>问题是找不到DSYM文件，所以解决步骤分2步：</p><ol><li>人肉找</li><li>找到后，告诉Instruments</li></ol><h2 id="Xcode部分"><a href="#Xcode部分" class="headerlink" title="Xcode部分"></a>Xcode部分</h2><ol><li>定位到build settings-build option-Debug Information Format，设为<code>DWARF with dSYM File</code><br><img src="02.png" alt="_"></li><li>清理工程Clean Product (快捷键Shift + Command + K)</li><li>创建工程Build Product (快捷键Command + B)</li><li>在编译日志中找到刚刚生产的dsym文件路径，推荐在右上角输入关键字<code>dsym</code>过滤信息<br><img src="03.png" alt="_"><br>点开后看到路径<br><img src="04.png" alt="_"><br>一般路径格式：<code>/Users/YourUserName/Library/Developer/Xcode/DerivedData/YourProjectName/Build/Products/&lt;mode&gt;-iOS/YourProjectName.app.dSYM</code></li></ol><h2 id="Instruments部分"><a href="#Instruments部分" class="headerlink" title="Instruments部分"></a>Instruments部分</h2><ol><li>偏好设置中，设置DSYM文件所在文件夹，可以设置多个，比如Debug、Release2个路径<br><img src="05.png" alt="_"></li><li>好了，试一试。如果还没有符号信息，没关系，继续手机操作，然后终止</li><li>打开Instruments-File-Symbols，展开你的工程，选中后设置下<code>dSYM Path</code>。再回头看刚才的记录数据，都有符号信息了。</li></ol><p><img src="06.png" alt="_"></p>]]></content>
     
@@ -31,7 +55,7 @@
     
     </summary>
     
-      <category term="开发工具" scheme="https://xjkstar.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="Xcode" scheme="https://xjkstar.github.io/categories/Xcode/"/>
     
     
       <category term="Xcode" scheme="https://xjkstar.github.io/tags/Xcode/"/>

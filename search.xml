@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Xcode非开发者账号真机调试教程</title>
+      <link href="/2018/05/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/"/>
+      <url>/2018/05/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<p>对于Xcode7或更高版本，Xcode支持非开发者账号真机调试教程<br><a id="more"></a><br>RT。正文开始。</p><h3 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h3><p>首先得有Apple ID、Xcode7或更高版本</p><h3 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h3><p>打开Xcode个人偏好，添加Apple ID<br><img src="01.jpeg" alt="EC00CCD2_DF55_4167_8D4E_658AFA344200_"></p><h3 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h3><p>选中添加的账号，打开View Details<br><img src="02.jpeg" alt="94D1D254_D1D4_4AD7_910E_CC0AF78255D4"></p><h3 id="4、"><a href="#4、" class="headerlink" title="4、"></a>4、</h3><p>创建调试签名，对iOS Development点击Create，至此Xcode配置完成<br><img src="03.jpeg" alt="8C4BCF36_9350_4F00_B51C_FBDE2A92DCA3"></p><h3 id="5、"><a href="#5、" class="headerlink" title="5、"></a>5、</h3><p>连接iPhone设备，打开一个工程</p><h3 id="6、"><a href="#6、" class="headerlink" title="6、"></a>6、</h3><p>查看Build Settings，<br>确保code signing Entitlements为空，<br>Code signing Identity选择iOS Developer，<br>Provisioning Profile选择Automatic<br><img src="04.jpeg" alt="1B024716_B12F_49A1_B782_E63E274D7E22"></p><h3 id="7、"><a href="#7、" class="headerlink" title="7、"></a>7、</h3><p>调试设备选择插入的iPhone，<br>查看General，<br>修改下Bundle Identifier的内容，例如加个后缀，确保改值未被其他账户使用过，<br>Team选择刚添加的账号，<br>然后开始Fix issue（如果没有黄色警告，可以直接run）<br><img src="05.jpeg" alt="866B3C13_2553_4CA5_A8F5_F70B503E59A4"></p><h3 id="8、"><a href="#8、" class="headerlink" title="8、"></a>8、</h3><p>fix的过程比较久，如果超时了，重试fix。<br>成功后，黄色警告消失。此时可以run了<br><img src="06.jpeg" alt="67E1FD70_A2D2_402A_B4D1_451C090527F5"></p><h3 id="9、"><a href="#9、" class="headerlink" title="9、"></a>9、</h3><p>iOS9 或更高版本，第一次run可能会报错，<br>此时可以看到iPhone里已有demo，证书信任下<br><img src="07.jpeg" alt="FEFA012F_95C6_4455_BB34_A99E20129A70"><br><img src="08.jpeg" alt="Evernote_Camera_Roll_20151209_200232"></p><h3 id="10、"><a href="#10、" class="headerlink" title="10、"></a>10、</h3><p>Congratulations!Final Complete！Mission All~Over!</p><h3 id="11、"><a href="#11、" class="headerlink" title="11、"></a>11、</h3><p>针对xcode 8.2级以上版本，有时遇到如下报错<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The <span class="string">'Apple Push Notification'</span> feature <span class="keyword">is</span> <span class="keyword">only</span> available <span class="keyword">to</span> users enrolled in Apple Developer Program. Please visit http<span class="variable">s:</span>//developer.apple.<span class="keyword">com</span>/programs/ <span class="keyword">to</span> enroll.</span><br></pre></td></tr></table></figure></p><p>老版本可以在Capabilities直接关掉Push，8.2开始，界面上没有这个开关了，但配置还在。此时需要手工编辑xproject。<br>打开工程目录下：/Pods/Portal/Portal/Portal.xcodeproj，右键“显示包内容”，打开project.pbxproj，搜索关键词“com.apple.Push”，看见如下内容：<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">com.apple.Push = &#123;</span><br><span class="line">    enabled = <span class="number">1</span><span class="comment">;</span></span><br><span class="line">&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure></p><p>修改enabled = 0，保存，退出，run～</p>]]></content>
+      
+      <categories>
+          
+          <category> Xcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Xcode </tag>
+            
+            <tag> Push </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>解决Xcode的Instruments无法找到DSYM文件问题</title>
       <link href="/2018/05/24/%E8%A7%A3%E5%86%B3Xcode%E7%9A%84Instruments%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0DSYM%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98/"/>
       <url>/2018/05/24/%E8%A7%A3%E5%86%B3Xcode%E7%9A%84Instruments%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0DSYM%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98/</url>
@@ -10,7 +33,7 @@
       
       <categories>
           
-          <category> 开发工具 </category>
+          <category> Xcode </category>
           
       </categories>
       
