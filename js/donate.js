@@ -10,6 +10,7 @@
 	}
 })(jQuery);
 jQuery(document).ready(function() {
+	console.log('github: ');
 	$("#github").attr('href', $.getUrlParam('GitHub') || "https://github.com/" + window.location.href.split(".github.io")[0].split("/").pop())
 	var QRBox = $('#QRBox');
 	var MainBox = $('#MainBox');
