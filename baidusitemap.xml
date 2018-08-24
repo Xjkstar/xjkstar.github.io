@@ -4,8 +4,52 @@
 
     
   <url>
+    <loc>https://xjkstar.github.io/xjkstar.github.io/2018/08/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E2%80%94%E2%80%94%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98%E8%84%B1%E5%9D%91%E6%89%8B%E5%86%8C/</loc>
+    <lastmod>2018-08-24T05:16:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>Xcode非开发者账号真机调试——权限问题脱坑手册</title>
+        <pubTime>2018-08-24T04:33:46.000Z</pubTime>
+        
+        <tag>Xcode</tag>
+         
+        <tag>真机调试</tag>
+         
+         
+           
+             
+              <breadCrumb title="Xcode" url="https://xjkstar.github.io/xjkstar.github.io/categories/Xcode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://xjkstar.github.io/xjkstar.github.io/2018/05/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2018-08-24T04:34:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>Xcode非开发者账号真机调试教程</title>
+        <pubTime>2018-05-24T11:45:01.000Z</pubTime>
+        
+        <tag>Xcode</tag>
+         
+        <tag>真机调试</tag>
+         
+         
+           
+             
+              <breadCrumb title="Xcode" url="https://xjkstar.github.io/xjkstar.github.io/categories/Xcode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://xjkstar.github.io/xjkstar.github.io/2018/08/02/iOS%E5%8C%85%E5%A4%A7%E5%B0%8F%E7%98%A6%E8%BA%AB-Asset%20Catalog/</loc>
-    <lastmod>2018-08-06T04:06:29.206Z</lastmod>
+    <lastmod>2018-08-06T04:06:29.000Z</lastmod>
     <data>
         <display>
         <title>iOS包大小瘦身-Asset Catalog</title>
@@ -29,7 +73,7 @@
     
   <url>
     <loc>https://xjkstar.github.io/xjkstar.github.io/2018/05/24/%E8%A7%A3%E5%86%B3Xcode%E7%9A%84Instruments%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0DSYM%E6%96%87%E4%BB%B6%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2018-05-30T06:48:05.697Z</lastmod>
+    <lastmod>2018-05-30T06:48:05.000Z</lastmod>
     <data>
         <display>
         <title>解决Xcode的Instruments无法找到DSYM文件问题</title>
@@ -53,30 +97,8 @@
     
     
   <url>
-    <loc>https://xjkstar.github.io/xjkstar.github.io/2018/05/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2018-05-24T11:50:02.324Z</lastmod>
-    <data>
-        <display>
-        <title>Xcode非开发者账号真机调试教程</title>
-        <pubTime>2018-05-24T11:45:01.000Z</pubTime>
-        
-        <tag>Xcode</tag>
-         
-        <tag>Push</tag>
-         
-         
-           
-             
-              <breadCrumb title="Xcode" url="https://xjkstar.github.io/xjkstar.github.io/categories/Xcode/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://xjkstar.github.io/xjkstar.github.io/2018/05/22/HEXO-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2018-05-24T09:55:44.897Z</lastmod>
+    <lastmod>2018-05-24T09:55:44.000Z</lastmod>
     <data>
         <display>
         <title>HEXO 常用指令</title>
@@ -98,7 +120,7 @@
     
   <url>
     <loc>https://xjkstar.github.io/xjkstar.github.io/2018/05/24/GitHub-GitLab-ssh%E5%B9%B6%E5%AD%98/</loc>
-    <lastmod>2018-05-24T08:12:09.939Z</lastmod>
+    <lastmod>2018-05-24T08:12:09.000Z</lastmod>
     <data>
         <display>
         <title>GitHub & GitLab ssh并存</title>
@@ -122,11 +144,11 @@
     
   <url>
     <loc>https://xjkstar.github.io/xjkstar.github.io/2018/05/22/hello-world/</loc>
-    <lastmod>2018-05-24T07:03:18.725Z</lastmod>
+    <lastmod>2018-05-24T07:03:18.000Z</lastmod>
     <data>
         <display>
         <title>Hello World</title>
-        <pubTime>2018-05-22T11:24:48.515Z</pubTime>
+        <pubTime>2018-05-22T11:24:48.000Z</pubTime>
         
          
            

@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Xcode非开发者账号真机调试——权限问题脱坑手册</title>
+      <link href="/2018/08/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E2%80%94%E2%80%94%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98%E8%84%B1%E5%9D%91%E6%89%8B%E5%86%8C/"/>
+      <url>/2018/08/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E2%80%94%E2%80%94%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98%E8%84%B1%E5%9D%91%E6%89%8B%E5%86%8C/</url>
+      <content type="html"><![CDATA[<p>非开发者证书因权限问题，需要关闭Push Notifications、Associated Domains等权限才能真机调试。本文提供关于权限问题的统一解决方案。<br><a id="more"></a></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Xcode 7.2开始，苹果支持非开发者账号真机调试。关于如何使用，参考旧文<a href="https://xjkstar.github.io/2018/05/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/">《[iOS]Xcode非开发者账号真机调试教程》</a>。<br>但从Xcode 8.2 开始出现一些问题，非开发者证书因权限问题，需要关闭Push Notifications、Associated Domains等权限才能真机调试。当时旧文中提供修改.xcodeproj的方法解决。但到了Xcode 9.4.2不生效了。本文提供关于权限问题的统一解决方案</p><h1 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h1><p>在Xcode 9.4.2，非开发者证书被隐藏了13项capabilities，见下图底部文案<br><img src="1.png" alt="1.png"></p><p>经过长期、反复折磨，偶然发现证书选None时，所有capabilities都入口展示了，然后修改某个capabilities时，会弹窗选择一个证书。用此方法，可以关闭所有权限。</p><h1 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h1><h2 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h2><p>开启非开发者账号真机调试，参考旧文<a href="https://xjkstar.github.io/2018/05/24/Xcode%E9%9D%9E%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%95%99%E7%A8%8B/">《[iOS]Xcode非开发者账号真机调试教程》</a>。</p><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><p>选择非开发者证书（图中的team:<a href="mailto:xjk_001@163.com" target="_blank" rel="noopener">xjk_001@163.com</a>，本人邮箱）后，如图报错，因为没有Push Notifications、Associated Domains权限，此时切到capabilities看不到Push Notifications、Associated Domains入口，参见图1</p><h2 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h2><p>回到General，Team选择None，再切回capabilities，此时所有capabilities都展示了<br><img src="2.png" alt="2.png"></p><h2 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h2><p>选择要关掉的capabilities，xcode弹窗让选择证书，此时选非开发者证书，可以关掉了<br><img src="3.png" alt="3.png"></p><h2 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h2><p>循环以上方法，解决所有capabilities问题</p>]]></content>
+      
+      <categories>
+          
+          <category> Xcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Xcode </tag>
+            
+            <tag> 真机调试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>iOS包大小瘦身-Asset Catalog</title>
       <link href="/2018/08/02/iOS%E5%8C%85%E5%A4%A7%E5%B0%8F%E7%98%A6%E8%BA%AB-Asset%20Catalog/"/>
       <url>/2018/08/02/iOS%E5%8C%85%E5%A4%A7%E5%B0%8F%E7%98%A6%E8%BA%AB-Asset%20Catalog/</url>
@@ -42,7 +65,7 @@
             
             <tag> Xcode </tag>
             
-            <tag> Push </tag>
+            <tag> 真机调试 </tag>
             
         </tags>
       
