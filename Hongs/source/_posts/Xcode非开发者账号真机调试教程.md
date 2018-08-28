@@ -1,7 +1,7 @@
 ---
 title: Xcode非开发者账号真机调试教程
 toc: true
-tags: [Xcode,Push]
+tags: [Xcode,真机调试]
 date: 2018-05-24 19:45:01
 categories: Xcode
 ---
