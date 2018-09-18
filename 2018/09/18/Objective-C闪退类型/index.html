@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Objective-c,github"><title>Objective-C闪退类型 | Xjkstar's Blogs</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Objective-C闪退类型</h1><a id="logo" href="/.">Xjkstar's Blogs</a><p class="description">This is your life. Do what you love, and do it often.</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Objective-C闪退类型</h1><div class="post-meta">Sep 18, 2018<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 213</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-hourglass-half"></i><span class="post-count"> 1</span><span class="post-meta-item-text"> 分钟</span></span></span></div><a class="disqus-comment-count" data-disqus-identifier="2018/09/18/Objective-C闪退类型/" href="/2018/09/18/Objective-C闪退类型/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#符号"><span class="toc-number">1.</span> <span class="toc-text">符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">2.</span> <span class="toc-text">解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-number">3.</span> <span class="toc-text">引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#来源"><span class="toc-number">4.</span> <span class="toc-text">来源</span></a></li></ol></div></div><div class="post-content"><p>iOS的6个闪退类型解释<br><a id="more"></a></p>
+<h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><p>定义于头文件 &lt;signal.h&gt;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGTERM <span class="comment">/*implementation defined*/</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGSEGV <span class="comment">/*implementation defined*/</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGINT <span class="comment">/*implementation defined*/</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGILL <span class="comment">/*implementation defined*/</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGABRT <span class="comment">/*implementation defined*/</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGFPE <span class="comment">/*implementation defined*/</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>上面每个宏常量都展开成拥有相异值的整数常量表达式，表示发送给程序的不同信号。</p>
+<table>
+<thead>
+<tr>
+<th>常量</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>SIGTERM|发送给程序的终止请求|<br>SIGSEGV|非法内存访问（段错误）|<br>SIGINT|外部中断，通常为用户所发动|<br>SIGILL|非法程序映像，例如非法指令|<br>SIGABRT|异常终止条件，例如 abort() 所起始的|<br>SIGFPE|错误的算术运算，如除以零|</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
+<li>C11 standard (ISO/IEC 9899:2011):<ul>
+<li>7.14/3 Signal handling &lt;signal.h&gt; (p: 265)</li>
+</ul>
+</li>
+<li>C99 standard (ISO/IEC 9899:1999):<ul>
+<li>7.14/3 Signal handling &lt;signal.h&gt; (p: 246)</li>
+</ul>
+</li>
+<li>C89/C90 standard (ISO/IEC 9899:1990):<ul>
+<li>4.7 SIGNAL HANDLING &lt;signal.h&gt;</li>
+</ul>
+</li>
+</ul>
+<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p><a href="https://zh.cppreference.com/w/c/program/SIG_types" target="_blank" rel="noopener">cppreference.com</a></p>
+</div><iframe src="/xjkstar.github.io/donate/?AliPayQR=/img/AliPayQR.png&amp;WeChatQR=null&amp;GitHub=null&amp;BTCQR=null&amp;BTCKEY=null&amp;PayPal=null" style="overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a class="article-share-link" data-url="https://xjkstar.github.io/xjkstar.github.io/2018/09/18/Objective-C闪退类型/" data-id="cjm76q2z20002wxsdfi1efh2l" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACv0lEQVR42u3ay47iQAwF0P7/n2akWY3UQ3Ftl4HFyQrxSOoEKbau6+cnPh5/j39f5+/8/vTZr87X+v3NawceHh5ea+nnBZ1PnZ/hvNBHcORXxMPDw9vmJcUgKRLn759J5/eTc+Lh4eF9Gy9pkZ+ds9oW924ZHh4e3rfxzu1vsqy8ja5eBQ8PD+/9vPwyk5A3aZSrrfy1rAUPDw8v5vUGYJ99vT7fw8PDw2sNrnrjqGrEkEcP5bXh4eHhLfB6AWseJfQi3erA7MXK8fDw8K7ykrF9+W4d49ekPMzX85+6h4eHh7fA6w2xkoUmLXg1wI1adjw8PLw13mShk0B2XniilhoPDw/vKq/3g3zReQibxA2jrQN4eHh4l3jVjVDz7U23AtyoOOHh4eEt83qLyGOLXoFJPo2yFjw8PLxLvOqpq7xqOZkEH4UwFw8PD2/M6wUN1eHWZOSWbzVoJi54eHh4MW8SuSZbo7Y3IuDh4eF9ilfdJpWHF5OYYz6cw8PDw9vgTTYK5EFw7zuTa+Hh4eHt8XqnmD/050FtdJvw8PDw1njVIX258rTa4mq7X8ha8PDw8C7xqk1wteGeBBbNW4aHh4e3wMtb1Qmyd7bk1uRXwcPDw9vgJc103v4mv5r8A9WShoeHh7fBq7aqvbFZvgEr/z4eHh7ep3iTsVO1Ra6Wouomg+Y/hoeHhxevNhneTwb/k1uQlJkXxQMPDw/v7bz8AnkUW40bqiUNDw8Pb4/3KB7zfrVafs6N9Ys14OHh4S3w8iNvaqsxxKQgJe04Hh4e3gYvKQbVgLUKmBeGp/8bHh4e3hqvOhKbPLLzs+VF6+nNxcPDw/sCXj7mz6f5va1a5e1WeHh4eG/nJVsB8sd6NPhPHv3n24qHh4e3xkvCiDyw6IUX1ZVELTgeHh7eAq83AKs+rPOQ4sJ2Kzw8PLwt3h8o45KXxjhQ4AAAAABJRU5ErkJggg==">分享</a><div class="tags"><a href="/tags/iOS/">iOS</a><a href="/tags/Crash/">Crash</a></div><div class="post-nav"><a class="next" href="/2018/09/17/xxx-app已损坏-打不开-你应该将它移到废纸篓/">[转]xxx.app已损坏,打不开.你应该将它移到废纸篓</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'https://xjkstar.github.io/xjkstar.github.io/2018/09/18/Objective-C闪退类型/';
+    this.page.identifier = '2018/09/18/Objective-C闪退类型/';
+    this.page.title = 'Objective-C闪退类型';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//xjkstar.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//xjkstar.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://xjkstar.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac-OS/">Mac OS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xcode/">Xcode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/包大小/">包大小</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/Objective-C/" style="font-size: 15px;">Objective-C</a> <a href="/tags/C/" style="font-size: 15px;">C</a> <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/gitlab/" style="font-size: 15px;">gitlab</a> <a href="/tags/Crash/" style="font-size: 15px;">Crash</a> <a href="/tags/效率工具/" style="font-size: 15px;">效率工具</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/真机调试/" style="font-size: 15px;">真机调试</a> <a href="/tags/Mac-OS/" style="font-size: 15px;">Mac OS</a> <a href="/tags/iOS包大小/" style="font-size: 15px;">iOS包大小</a> <a href="/tags/Asset-Catalog/" style="font-size: 15px;">Asset Catalog</a> <a href="/tags/Instruments/" style="font-size: 15px;">Instruments</a> <a href="/tags/DSYM/" style="font-size: 15px;">DSYM</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/18/Objective-C闪退类型/">Objective-C闪退类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/17/xxx-app已损坏-打不开-你应该将它移到废纸篓/">[转]xxx.app已损坏,打不开.你应该将它移到废纸篓</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/28/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/24/Objective-c中引入C或C-语言/">Objective-C中引入C或C++语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/24/Xcode非开发者账号真机调试——权限问题脱坑手册/">Xcode非开发者账号真机调试——权限问题脱坑手册</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/02/iOS包大小瘦身-Asset Catalog/">iOS包大小瘦身-Asset Catalog</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/Xcode非开发者账号真机调试教程/">Xcode非开发者账号真机调试教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/解决Xcode的Instruments无法找到DSYM文件问题/">解决Xcode的Instruments无法找到DSYM文件问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/24/GitHub-GitLab-ssh并存/">GitHub & GitLab ssh并存</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/22/HEXO-常用命令/">HEXO 常用指令</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//xjkstar.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Xjkstar's Blogs.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

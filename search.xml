@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>Objective-C闪退类型</title>
+      <link href="/2018/09/18/Objective-C%E9%97%AA%E9%80%80%E7%B1%BB%E5%9E%8B/"/>
+      <url>/2018/09/18/Objective-C%E9%97%AA%E9%80%80%E7%B1%BB%E5%9E%8B/</url>
+      <content type="html"><![CDATA[<p>iOS的6个闪退类型解释<br><a id="more"></a></p><h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><p>定义于头文件 &lt;signal.h&gt;</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGTERM <span class="comment">/*implementation defined*/</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGSEGV <span class="comment">/*implementation defined*/</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGINT <span class="comment">/*implementation defined*/</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGILL <span class="comment">/*implementation defined*/</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGABRT <span class="comment">/*implementation defined*/</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIGFPE <span class="comment">/*implementation defined*/</span></span></span><br></pre></td></tr></table></figure><h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>上面每个宏常量都展开成拥有相异值的整数常量表达式，表示发送给程序的不同信号。</p><table><thead><tr><th>常量</th><th>解释</th></tr></thead><tbody><tr><td></td></tr></tbody></table><p>SIGTERM|发送给程序的终止请求|<br>SIGSEGV|非法内存访问（段错误）|<br>SIGINT|外部中断，通常为用户所发动|<br>SIGILL|非法程序映像，例如非法指令|<br>SIGABRT|异常终止条件，例如 abort() 所起始的|<br>SIGFPE|错误的算术运算，如除以零|</p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul><li>C11 standard (ISO/IEC 9899:2011):<ul><li>7.14/3 Signal handling &lt;signal.h&gt; (p: 265)</li></ul></li><li>C99 standard (ISO/IEC 9899:1999):<ul><li>7.14/3 Signal handling &lt;signal.h&gt; (p: 246)</li></ul></li><li>C89/C90 standard (ISO/IEC 9899:1990):<ul><li>4.7 SIGNAL HANDLING &lt;signal.h&gt;</li></ul></li></ul><h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p><a href="https://zh.cppreference.com/w/c/program/SIG_types" target="_blank" rel="noopener">cppreference.com</a></p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> iOS </tag>
+            
+            <tag> Crash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>[转]xxx.app已损坏,打不开.你应该将它移到废纸篓</title>
       <link href="/2018/09/17/xxx-app%E5%B7%B2%E6%8D%9F%E5%9D%8F-%E6%89%93%E4%B8%8D%E5%BC%80-%E4%BD%A0%E5%BA%94%E8%AF%A5%E5%B0%86%E5%AE%83%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/"/>
       <url>/2018/09/17/xxx-app%E5%B7%B2%E6%8D%9F%E5%9D%8F-%E6%89%93%E4%B8%8D%E5%BC%80-%E4%BD%A0%E5%BA%94%E8%AF%A5%E5%B0%86%E5%AE%83%E7%A7%BB%E5%88%B0%E5%BA%9F%E7%BA%B8%E7%AF%93/</url>
